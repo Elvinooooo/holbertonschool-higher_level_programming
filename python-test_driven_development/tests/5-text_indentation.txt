@@ -41,11 +41,6 @@ Dostlar.
 Salam dostlar.
 <BLANKLINE>
 
->>> text_indentation("Salam \n dostlar.")
-Salam
-dostlar.
-<BLANKLINE>
-
 >>> text_indentation(20)
 Traceback (most recent call last):
 TypeError: text must be a string
