@@ -1,0 +1,57 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("Necesen?")
+Necesen?
+<BLANKLINE>
+
+>>> text_indentation("   Salam.")
+Salam.
+<BLANKLINE>
+
+
+
+>>> text_indentation("          ")
+
+>>> text_indentation("Hello.   ")
+Hello.
+<BLANKLINE>
+
+>>> text_indentation("    Salam.    Dostlar.   ")
+Salam.
+<BLANKLINE>
+Dostlar.
+<BLANKLINE>
+
+>>> text_indentation("Salam dostlar")
+Salam dostlar
+
+>>> text_indentation("Salam\nDostlar.")
+Salam
+<BLANKLINE>
+<BLANKLINE>
+Dostlar.
+<BLANKLINE>
+
+>>> text_indentation("\n\n\n Salam dostlar.")
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+Salam dostlar.
+<BLANKLINE>
+
+>>> text_indentation("Salam \n dostlar.")
+Salam 
+    dostlar.
+    <BLANKLINE>
+
+>>> text_indentation(20)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation({"Elvin": 33, "Elxan": 36})
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+TypeError: text must be a string
