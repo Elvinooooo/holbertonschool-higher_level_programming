@@ -25,7 +25,7 @@ Dostlar.
 >>> text_indentation("Salam dostlar")
 Salam dostlar
 
->>> text_indentation("Salam\nDostlar.")
+>>> text_indentation("Salam. \n Dostlar.")
 Salam
 <BLANKLINE>
 <BLANKLINE>
