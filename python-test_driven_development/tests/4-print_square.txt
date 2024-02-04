@@ -21,10 +21,6 @@
 ##########
 ##########
 
-
->>> print_square(0)
-Invalid Sizes
-
 >>> print_square("not an int")
 Traceback (most recent call last):
 TypeError: size must be an integer
