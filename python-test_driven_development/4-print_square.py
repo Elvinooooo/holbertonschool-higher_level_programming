@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-# 4-print_square.py
-# Brennan D Baraban <375@holbertonschool.com>
-"""Defines a square-printing function."""
+"""Defines a function for printing a square"""
 
 
 def print_square(size):

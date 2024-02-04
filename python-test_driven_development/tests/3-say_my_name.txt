@@ -7,7 +7,8 @@ My name is Elvin Allahverdiyev
 My name is Fuad Mehraliyev Yashar
 
 >>> say_my_name("Elvin")
-My name is Elvin
+My name is Elvin 
+
 
 >>> say_my_name(6, "James")
 Traceback (most recent call last):
