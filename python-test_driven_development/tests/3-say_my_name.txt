@@ -1,7 +1,7 @@
 >>> say_my_name = __import__('3-say_my_name').say_my_name
 
 >>> say_my_name("Elvin", "Allahverdiyev")
-My name is Brennan Baraban
+My name is Elvin Allahverdiyev
 
 >>> say_my_name("Fuad", "Mehraliyev Yashar")
 My name is Fuad Mehraliyev Yashar
