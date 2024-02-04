@@ -26,11 +26,11 @@ Dostlar.
 Salam dostlar
 
 >>> text_indentation("Salam. \n Dostlar.")
-Salam
-<BLANKLINE>
-<BLANKLINE>
-Dostlar.
-<BLANKLINE>
+    Salam
+    <BLANKLINE>
+    <BLANKLINE>
+    Dostlar.
+    <BLANKLINE>
 
 >>> text_indentation("\n\n\n Salam dostlar.")
 <BLANKLINE>
@@ -40,9 +40,9 @@ Salam dostlar.
 <BLANKLINE>
 
 >>> text_indentation("Salam \n dostlar.")
-Salam 
-    dostlar.
-    <BLANKLINE>
+    Salam 
+        dostlar.
+        <BLANKLINE>
 
 >>> text_indentation(20)
 Traceback (most recent call last):
