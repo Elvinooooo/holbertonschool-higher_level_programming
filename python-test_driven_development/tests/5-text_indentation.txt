@@ -1,5 +1,7 @@
 >>> text_indentation = __import__('5-text_indentation').text_indentation
 
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
 >>> text_indentation("Necesen?")
 Necesen?
 <BLANKLINE>
@@ -25,7 +27,7 @@ Dostlar.
 >>> text_indentation("Salam dostlar")
 Salam dostlar
 
->>> text_indentation("Salam. \n Dostlar.")
+>>> text_indentation("Salam: \n Dostlar.")
     Salam
     <BLANKLINE>
     <BLANKLINE>
@@ -40,9 +42,9 @@ Salam dostlar.
 <BLANKLINE>
 
 >>> text_indentation("Salam \n dostlar.")
-    Salam 
-        dostlar.
-        <BLANKLINE>
+    Salam
+    dostlar.
+    <BLANKLINE>
 
 >>> text_indentation(20)
 Traceback (most recent call last):
