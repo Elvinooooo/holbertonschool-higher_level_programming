@@ -13,5 +13,6 @@ print("--")
 
 my_square_3 = Square(3, (3, 0))
 my_square_3.my_print()
-
+my_square = Square(0, (10, 3))
+my_square.my_print()
 print("--")
