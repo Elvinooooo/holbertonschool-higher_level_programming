@@ -66,34 +66,3 @@ class Rectangle:
         for i in range(self.__height):
             rectangle_str += str(self.print_symbol) * self.__width + "\n"
         return rectangle_str[:-1]
-
-    def __repr__(self):
-        """Return the string representation of the Rectangle."""
-        return "Rectangle({}, {})".format(self.__width, self.__height)
-
-    @staticmethod
-    def bigger_or_equal(rect_1, rect_2):
-        """Return the Rectangle with the greater area.
-
-        Args:
-            rect_1 (Rectangle): The first Rectangle.
-            rect_2 (Rectangle): The second Rectangle.
-        Raises:
-            TypeError: If either of rect_1 or rect_2 is not a Rectangle.
-        """
-        if not isinstance(rect_1, Rectangle):
-            raise TypeError("rect_1 must be an instance of Rectangle")
-        if not isinstance(rect_2, Rectangle):
-            raise TypeError("rect_2 must be an instance of Rectangle")
-        if rect_2.area() > rect_1.area():
-            return rect_2
-        return rect_1
-
-    @classmethod
-    def square(cls, size=0):
-        """Return a new Rectangle with width and height equal to size.
-
-        Args:
-            size (int): The width and height of the new Rectangle.
-        """
-        return cls(size, size)
