@@ -71,11 +71,6 @@ class Rectangle:
         """Return the string representation of the Rectangle."""
         return "Rectangle({}, {})".format(self.__width, self.__height)
 
-    def __del__(self):
-        """Print a message for every deletion of a Rectangle."""
-        print("Bye rectangle...")
-        type(self).number_of_instances -= 1
-
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """Return the Rectangle with the greater area.
