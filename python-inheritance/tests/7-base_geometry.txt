@@ -7,6 +7,13 @@
 Traceback (most recent call last):
 Exception: area() is not implemented
 
->>> baseG.integer_validator()
+>>> baseG.integer_validator("salam", 5)
+>>>
+
+>>> baseG.integer_validator("salam", "5")
 Traceback (most recent call last):
-TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+TypeError: salam must be an integer
+
+>>> baseG.integer_validator("salam", 0)   
+Traceback (most recent call last):
+ValueError: salam must be greater than 0
