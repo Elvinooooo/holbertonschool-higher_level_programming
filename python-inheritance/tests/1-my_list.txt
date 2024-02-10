@@ -63,7 +63,7 @@ TypeError: print_sorted() takes 1 positional argument but 2 were given
 ['Burdasiz', 'Dostlar', 'Necesiz', 'Salam', 'Yaxshisiz']
 
 >>> print(my_list)
-['Salam', 'Dostlar', 'Necesiz', 'Yaxsisiz', 'Burdasiz']
+['Salam', 'Dostlar', 'Necesiz', 'Yaxshisiz', 'Burdasiz']
 
 >>> my_list = MyList()
 >>> my_list.print_sorted()
