@@ -18,13 +18,15 @@ TypeError: salam must be an integer
 Traceback (most recent call last):
 ValueError: salam must be greater than 0
 
->>> baseG.integer_validator(“age”)                        ^
-SyntaxError: invalid character '“' (U+201C)
+>>> baseG.integer_validator("age")
+TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
 
->>> baseG.integer_validator(“age”, (4,))
-SyntaxError: invalid character '“' (U+201C)
 
->>> baseG.integer_validator(“age”, [3]) 
-SyntaxError: invalid character '“' (U+201C)
+>>> baseG.integer_validator("age", (4,))
+Traceback (most recent call last):
+TypeError: age must be an integer
 
+>>> baseG.integer_validator("age", [3])
+Traceback (most recent call last):
+TypeError: age must be an integer
 
