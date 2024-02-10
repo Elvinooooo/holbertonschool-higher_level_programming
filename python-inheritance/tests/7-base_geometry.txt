@@ -1,1 +1,14 @@
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> type(baseG)
+<class '__main__.BaseGeometry'>
+
+>>> bg.area()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'bg' is not defined
+
+>>> bg.integer_validator()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'bg' is not defined
+
