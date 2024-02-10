@@ -2,3 +2,7 @@
 >>> baseG = BaseGeometry()
 >>> type(baseG)
 <class '7-base_geometry.BaseGeometry'>
+
+>>> baseG.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
