@@ -17,3 +17,14 @@ TypeError: salam must be an integer
 >>> baseG.integer_validator("salam", 0)   
 Traceback (most recent call last):
 ValueError: salam must be greater than 0
+
+>>> baseG.integer_validator(“age”)                        ^
+SyntaxError: invalid character '“' (U+201C)
+
+>>> baseG.integer_validator(“age”, (4,))
+SyntaxError: invalid character '“' (U+201C)
+
+>>> baseG.integer_validator(“age”, [3]) 
+SyntaxError: invalid character '“' (U+201C)
+
+
