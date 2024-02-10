@@ -60,10 +60,10 @@ TypeError: print_sorted() takes 1 positional argument but 2 were given
 >>> print(my_list)
 ['Salam', 'Dostlar', 'Necesiz', 'Yaxsisiz', 'Burdasiz']
 >>> my_list.print_sorted()
-['Burdasiz', 'Dostlar', 'Necesiz', 'Salam', 'Yaxshisiz']
+['Burdasiz', 'Dostlar', 'Necesiz', 'Salam', 'Yaxsisiz']
 
 >>> print(my_list)
-['Salam', 'Dostlar', 'Necesiz', 'Yaxshisiz', 'Burdasiz']
+['Salam', 'Dostlar', 'Necesiz', 'Yaxsisiz', 'Burdasiz']
 
 >>> my_list = MyList()
 >>> my_list.print_sorted()
