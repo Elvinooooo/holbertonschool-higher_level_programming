@@ -2,13 +2,13 @@
 >>> type(baseG)
 <class '__main__.BaseGeometry'>
 
->>> bg.area()
+>>> baseG.area()
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-NameError: name 'bg' is not defined
+  File "<stdin>", line 3, in area
+Exception: area() is not implemented
 
->>> bg.integer_validator()
+>>> baseG.integer_validator()
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-NameError: name 'bg' is not defined
-
+TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
