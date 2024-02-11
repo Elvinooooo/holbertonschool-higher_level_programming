@@ -19,4 +19,4 @@ class Student:
 
     def to_json(self):
         """Convert to json dict"""
-        return self.__dict__ 
+        return self.__dict__
