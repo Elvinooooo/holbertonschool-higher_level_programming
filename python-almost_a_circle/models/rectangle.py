@@ -10,7 +10,11 @@ class Rectangle(Base):
         Args:
             width(int): width of rectangle
             height(int): height of rectangle
+            x: x value of the rectangle
+            y: y value of the rectangle
+            id: the id of the rectangle
         """
+
         self.width = width
         self.height = height
         self.x = x
@@ -19,20 +23,40 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """Set/Get the width"""
+        """Get the width"""
         return self.__width
+
+    @width.setter
+    def width(self, value):
+        """Set the width"""
+        self.__width = value
 
     @property
     def height(self):
-        """Set/Get the height"""
+        """Get the height"""
         return self.__height
+
+    @height.setter
+    def height(self, value):
+        """Set the height"""
+        self.__height = value
 
     @property
     def x(self):
-        """Set/Get the x value"""
+        """Get the x value"""
         return self.__x
+
+    @x.setter
+    def x(self, value):
+        """Set the x value"""
+        self.__x = value
 
     @property
     def y(self):
-        """Set/Get the y value"""
+        """Get the y value"""
         return self.__y
+
+    @y.setter
+    def y(self, value):
+        """Set the y value"""
+        self.__y = value
