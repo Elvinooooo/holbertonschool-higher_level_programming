@@ -23,11 +23,11 @@ class Square(Rectangle):
     @size.setter
     def size(self, value):
         """Set the size of the square"""
-        self.width =  value
+        self.width = value
         self.height = value
 
     def __str__(self):
         """method that returns [Square] (<id>) <x>/<y> - <width>/<height>"""
         return "[Square] ({}) {}/{} - {}".format(self.id,
-                                                    self.x, self.y,
-                                                    self.size)
+                                                 self.x, self.y,
+                                                 self.size)
