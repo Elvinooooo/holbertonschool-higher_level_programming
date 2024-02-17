@@ -94,7 +94,8 @@ class TestRectangle(unittest.TestCase):
         """Test creating Rectangle with negative y-coordinate"""
         with self.assertRaises(ValueError):
             Rectangle(1, 2, 3, -4)
-        def test_area(self):
+
+    def test_area(self):
         """Test the area() method"""
         rectangle = Rectangle(3, 4)
         self.assertEqual(rectangle.area(), 12)
