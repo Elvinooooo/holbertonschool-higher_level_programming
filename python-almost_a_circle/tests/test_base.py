@@ -23,5 +23,10 @@ class TestBase(unittest.TestCase):
         self.assertEqual(base2.id, 2)
         self.assertEqual(base3.id, 3)
 
+    def test_save_id_89(self):
+        """ Create a Base instance with ID 89"""
+        base_89 = Base(89)
+        self.assertEqual(base_89.id, 89)
+
 if __name__ == '__main__':
     unittest.main()
