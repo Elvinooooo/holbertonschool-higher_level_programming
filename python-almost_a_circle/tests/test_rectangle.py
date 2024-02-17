@@ -46,6 +46,11 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             Rectangle(1, 2, "3")
 
+    def test_rectangle_width_string(self):
+        """Rectangle(1, "2")"""
+        with self.assertRaises(TypeError):
+            Rectangle(1,"2")
+
     def test_rectangle_y_str(self):
         """Test of Rectangle(1, 2, 3, "4")"""
         with self.assertRaises(TypeError):
@@ -59,3 +64,34 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rectangle.x,3)
         self.assertEqual(rectangle.y,4)
         self.assertEqual(rectangle.id,5)
+
+    def test_rectangle_negative_width(self):
+        """Test creating Rectangle with negative width"""
+        with self.assertRaises(ValueError):
+            Rectangle(-1, 2)
+
+    def test_rectangle_negative_height(self):
+        """Test creating Rectangle with negative height"""
+        with self.assertRaises(ValueError):
+            Rectangle(1, -2)
+
+    def test_rectangle_zero_width(self):
+        """Test creating Rectangle with zero width"""
+        with self.assertRaises(ValueError):
+            Rectangle(0, 2)
+
+    def test_rectangle_zero_height(self):
+        """Test creating Rectangle with zero height"""
+        with self.assertRaises(ValueError):
+            Rectangle(1, 0)
+
+    def test_rectangle_negative_x(self):
+        """Test creating Rectangle with negative x-coordinate"""
+        with self.assertRaises(ValueError):
+            Rectangle(1, 2, -3)
+
+    def test_rectangle_negative_y(self):
+        """Test creating Rectangle with negative y-coordinate"""
+        with self.assertRaises(ValueError):
+            Rectangle(1, 2, 3, -4)
+    
