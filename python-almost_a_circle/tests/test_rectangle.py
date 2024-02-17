@@ -18,14 +18,11 @@ class TestRectangle(unittest.TestCase):
     def rectangle_1_2(self):
         """Test of Rectangle(1, 2)"""
         rectangle = Rectangle(1, 2)
-        rectangle1 = Rectangle(3, 4)
-        rectangle2 = Rectangle(5, 6)
         self.assertEqual(rectangle.width, 1)
         self.assertEqual(rectangle.height, 2)
-        self.assertEqual(rectangle1.width, 3)
-        self.assertEqual(rectangle1.height, 4)
-        self.assertEqual(rectangle2.width, 5)
-        self.assertEqual(rectangle2.height, 6)
+        self.assertEqual(rectangle.x, 0)
+        self.assertEqual(rectangle.y, 0)
+
     def test_rectangle_1_2_3_exists(self):
         """Test if Rectangle(1, 2, 3) exists"""
         rectangle = Rectangle(1, 2, 3)
