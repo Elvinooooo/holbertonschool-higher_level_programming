@@ -17,7 +17,7 @@ class TestRectangle(unittest.TestCase):
 
     def rectangle_1_2(self):
         """Test of Rectangle(1, 2)"""
-        rectangle = Rectangle(1,2)
+        rectangle = Rectangle(1, 2)
         self.assertEqual(rect.width, 1)
         self.assertEqual(rect.height, 2)
 
@@ -39,7 +39,7 @@ class TestRectangle(unittest.TestCase):
     def test_rectangle_width_string(self):
         """Rectangle("1", 2)"""
         with self.assertRaises(TypeError):
-            Rectangle("1",2)
+            Rectangle("1", 2)
 
     def test_rectangle_x_str(self):
         """Test of Rectangle(1, 2, "3")"""
@@ -94,4 +94,7 @@ class TestRectangle(unittest.TestCase):
         """Test creating Rectangle with negative y-coordinate"""
         with self.assertRaises(ValueError):
             Rectangle(1, 2, 3, -4)
-    
+        def test_area(self):
+        """Test the area() method"""
+        rectangle = Rectangle(3, 4)
+        self.assertEqual(rectangle.area(), 12)
