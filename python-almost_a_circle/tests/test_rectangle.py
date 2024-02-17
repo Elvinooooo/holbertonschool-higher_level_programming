@@ -22,6 +22,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rectangle.height, 2)
         self.assertEqual(rectangle.x, 0)
         self.assertEqual(rectangle.y, 0)
+        self.assertEqual(rectangle.id, 1)
 
     def test_rectangle_1_2_3_exists(self):
         """Test if Rectangle(1, 2, 3) exists"""
