@@ -160,5 +160,5 @@ class TestSquare(unittest.TestCase):
         self.assertTrue(os.path.exists(filename))
         with open(filename, "r") as file:
             content = file.read()
-            self.assertEqual(content, '[{"id": 17, "size": 1, "x": 0, "y": 0}]')
+            self.assertEqual(content, '[{"id": 19, "size": 1, "x": 0, "y": 0}]')
         os.remove(filename)

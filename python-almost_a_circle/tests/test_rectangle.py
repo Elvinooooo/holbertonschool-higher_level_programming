@@ -190,7 +190,44 @@ class TestRectangle(unittest.TestCase):
 
         r = Rectangle(4, 2, 2, 2)
         r.display()
-
-        sys.stdout = sys.__stdout__  
-
+        sys.stdout = sys.__stdout__
         self.assertEqual(captured_output.getvalue(), "\n\n  ####\n  ####\n")
+
+    def test_load_from_file_nonexistent(self):
+        """Test of Rectangle.load_from_file() when file doesn’t exist."""
+        # Arrange
+        filename = "Rectangle.json"
+        if os.path.exists(filename):
+            os.remove(filename)  # Ensure the file doesn't exist
+
+        # Act
+        instances = Rectangle.load_from_file()
+
+        # Assert
+        self.assertEqual(instances, [])
+
+    def test_load_from_file_exists(self):
+        """Test of Rectangle.load_from_file() when file exists."""
+        # Arrange
+        filename = "Rectangle.json"
+        instances_data = [{"id": 1, "width": 2, "height": 3, "x": 4, "y": 5},
+                          {"id": 2, "width": 3, "height": 4, "x": 5, "y": 6}]
+        # Write data to the file
+        with open(filename, 'w') as file:
+            file.write(Rectangle.to_json_string(instances_data))
+
+        # Act
+        instances = Rectangle.load_from_file()
+
+        # Assert
+        self.assertEqual(len(instances), len(instances_data))
+        for instance, data in zip(instances, instances_data):
+            self.assertIsInstance(instance, Rectangle)
+            self.assertEqual(instance.id, data['id'])
+            self.assertEqual(instance.width, data['width'])
+            self.assertEqual(instance.height, data['height'])
+            self.assertEqual(instance.x, data['x'])
+            self.assertEqual(instance.y, data['y'])
+
+        # Clean up - remove the file
+        os.remove(filename)
