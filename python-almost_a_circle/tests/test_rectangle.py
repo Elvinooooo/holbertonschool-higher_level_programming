@@ -2,8 +2,10 @@
 """Module that checks with unit testing the rectangle.py"""
 import unittest
 import os
+import sys
 from models.rectangle import Rectangle
 import pep8
+from io import StringIO
 
 class TestRectangle(unittest.TestCase):
     """Class that checks rectangle.py"""
@@ -156,3 +158,39 @@ class TestRectangle(unittest.TestCase):
         rectangle_dict = {'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4}
         rectangle = Rectangle.create(**rectangle_dict)
         self.assertEqual(rectangle.to_dictionary(), rectangle_dict)
+
+    def test_display_without_x_and_y(self):
+        """Test display() without x and y."""
+        captured_output = StringIO()          
+        sys.stdout = captured_output          
+
+        r = Rectangle(4, 2)
+        r.display()
+
+        sys.stdout = sys.__stdout__  
+
+        self.assertEqual(captured_output.getvalue(), "####\n####\n")
+
+    def test_display_without_y(self):
+        """Test display() without y."""
+        captured_output = StringIO()          
+        sys.stdout = captured_output          
+
+        r = Rectangle(4, 2, 2)
+        r.display()
+
+        sys.stdout = sys.__stdout__  
+
+        self.assertEqual(captured_output.getvalue(), "  ####\n  ####\n")
+
+    def test_display(self):
+        """Test display()."""
+        captured_output = StringIO()          
+        sys.stdout = captured_output          
+
+        r = Rectangle(4, 2, 2, 2)
+        r.display()
+
+        sys.stdout = sys.__stdout__  
+
+        self.assertEqual(captured_output.getvalue(), "\n\n  ####\n  ####\n")
