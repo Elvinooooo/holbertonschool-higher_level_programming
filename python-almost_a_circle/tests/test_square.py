@@ -84,3 +84,44 @@ class TestSquare(unittest.TestCase):
         """Test initialization with zero size"""
         with self.assertRaises(ValueError):
             Square(0)
+
+    def test_square_str_method(self):
+        """Test of __str__() for Square"""
+        square = Square(5, 2, 3, 89)
+        expected_output = "[Square] (89) 2/3 - 5"
+        self.assertEqual(str(square), expected_output)
+
+    def test_square_to_dictionary(self):
+        """Test of to_dictionary() in Square"""
+        square = Square(5, 2, 3, 89)
+        expected_dict = {'id': 89, 'size': 5, 'x': 2, 'y': 3}
+        self.assertEqual(square.to_dictionary(), expected_dict)
+
+    def test_square_update_methods(self):
+        """Test of update() methods in Square"""
+        square = Square(5, 2, 3, 89)
+        
+        square.update(90)
+        self.assertEqual(square.id, 90)
+
+        square.update(90, 1)
+        self.assertEqual(square.size, 1)
+
+        square.update(90, 1, 2)
+        self.assertEqual(square.size, 1)
+        self.assertEqual(square.x, 2)
+
+        square.update(90, 1, 2, 3)
+        self.assertEqual(square.size, 1)
+        self.assertEqual(square.x, 2)
+        self.assertEqual(square.y, 3)
+
+        square.update(id=91)
+        self.assertEqual(square.id, 91)
+
+        square.update(id=91, size=2)
+        self.assertEqual(square.size, 2)
+
+        square.update(id=91, size=2, x=3)
+        self.assertEqual(square.size, 2)
+        self.assertEqual(square.x, 3)
