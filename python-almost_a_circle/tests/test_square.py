@@ -160,5 +160,30 @@ class TestSquare(unittest.TestCase):
         self.assertTrue(os.path.exists(filename))
         with open(filename, "r") as file:
             content = file.read()
-            self.assertEqual(content, '[{"id": 19, "size": 1, "x": 0, "y": 0}]')
+            self.assertEqual(content, '[{"id": 21, "size": 1, "x": 0, "y": 0}]')
+        os.remove(filename)
+
+    def test_load_from_file_nonexistent(self):
+        """Test of Square.load_from_file() when file doesn’t exist."""
+        filename = "Square.json"
+        if os.path.exists(filename):
+            os.remove(filename)
+        instances = Square.load_from_file()
+        self.assertEqual(instances, [])
+
+    def test_load_from_file_exists(self):
+        """Test of Square.load_from_file() when file exists."""
+        filename = "Square.json"
+        instances_data = [{"id": 1, "size": 2, "x": 3, "y": 4},
+                          {"id": 2, "size": 3, "x": 4, "y": 5}]
+        with open(filename, 'w') as file:
+            file.write(Square.to_json_string(instances_data))
+        instances = Square.load_from_file()
+        self.assertEqual(len(instances), len(instances_data))
+        for instance, data in zip(instances, instances_data):
+            self.assertIsInstance(instance, Square)
+            self.assertEqual(instance.id, data['id'])
+            self.assertEqual(instance.size, data['size'])
+            self.assertEqual(instance.x, data['x'])
+            self.assertEqual(instance.y, data['y'])
         os.remove(filename)
