@@ -125,3 +125,9 @@ class TestSquare(unittest.TestCase):
         square.update(id=91, size=2, x=3)
         self.assertEqual(square.size, 2)
         self.assertEqual(square.x, 3)
+
+    def test_square_create_method(self):
+        """Test of Square.create() method in Square"""
+        square_dict = {'id': 89, 'size': 5, 'x': 2, 'y': 3}
+        square = Square.create(**square_dict)
+        self.assertEqual(square.to_dictionary(), square_dict)
