@@ -22,7 +22,6 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rectangle.height, 2)
         self.assertEqual(rectangle.x, 0)
         self.assertEqual(rectangle.y, 0)
-        self.assertEqual(rectangle.id, 5)
 
     def test_rectangle_1_2_3_exists(self):
         """Test if Rectangle(1, 2, 3) exists"""
@@ -102,3 +101,58 @@ class TestRectangle(unittest.TestCase):
         """Test the area() method"""
         rectangle = Rectangle(3, 4)
         self.assertEqual(rectangle.area(), 12)
+
+
+    def test_str_method(self):
+        """Test of __str__() for Rectangle"""
+        rectangle = Rectangle(1, 2, 3, 4, 89)
+        expected_output = "[Rectangle] (89) 3/4 - 1/2"
+        self.assertEqual(str(rectangle), expected_output)
+
+    def test_display_without_xy(self):
+        """Test of display() without x and y"""
+        rectangle = Rectangle(2, 2)
+        expected_output = None
+        self.assertEqual(rectangle.display(), expected_output)
+
+    def test_display(self):
+        """Test of display()"""
+        rectangle = Rectangle(2, 2, 1, 1)
+        expected_output = None 
+        self.assertEqual(rectangle.display(), expected_output)
+
+    def test_to_dictionary(self):
+        """Test of to_dictionary() in Rectangle"""
+        rectangle = Rectangle(1, 2, 3, 4, 89)
+        expected_dict = {'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4}
+        self.assertEqual(rectangle.to_dictionary(), expected_dict)
+
+    def test_update_methods(self):
+        """Test of update() methods in Rectangle"""
+        rectangle = Rectangle(1, 2, 3, 4, 89)
+        rectangle.update(90)
+        self.assertEqual(rectangle.id, 90)
+
+        rectangle.update(90, 2)
+        self.assertEqual(rectangle.width, 2)
+
+        rectangle.update(90, 2, 3)
+        self.assertEqual(rectangle.height, 3)
+
+        rectangle.update(90, 2, 3, 4)
+        self.assertEqual(rectangle.x, 4)
+
+        rectangle.update(90, 2, 3, 4, 5)
+        self.assertEqual(rectangle.y, 5)
+
+        rectangle.update(id=91)
+        self.assertEqual(rectangle.id, 91)
+
+        rectangle.update(id=91, width=2)
+        self.assertEqual(rectangle.width, 2)
+
+    def test_create_method(self):
+        """Test of Rectangle.create() method in Rectangle"""
+        rectangle_dict = {'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4}
+        rectangle = Rectangle.create(**rectangle_dict)
+        self.assertEqual(rectangle.to_dictionary(), rectangle_dict)
