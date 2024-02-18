@@ -39,20 +39,20 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rectangle.x, 3)
         self.assertEqual(rectangle.y, 4)
 
-    def test_rectangle_width_string(self):
-        """Rectangle("1", 2)"""
+    def test_rectange_width_string(self):
+        """Test the constructor of Rectangle class with string width."""
         with self.assertRaises(TypeError):
             Rectangle("1", 2)
+
+    def test_rectangle_height_string(self):
+        """Rectangle(1, "2")"""
+        with self.assertRaises(TypeError):
+            Rectangle(1, "2")
 
     def test_rectangle_x_str(self):
         """Test of Rectangle(1, 2, "3")"""
         with self.assertRaises(TypeError):
             Rectangle(1, 2, "3")
-
-    def test_rectangle_width_string(self):
-        """Rectangle(1, "2")"""
-        with self.assertRaises(TypeError):
-            Rectangle(1, "2")
 
     def test_rectangle_y_str(self):
         """Test of Rectangle(1, 2, 3, "4")"""
