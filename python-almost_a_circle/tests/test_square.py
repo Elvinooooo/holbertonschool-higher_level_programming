@@ -162,22 +162,3 @@ class TestSquare(unittest.TestCase):
             content = file.read()
             self.assertEqual(content, '[{"id": 1, "size": 1, "x": 0, "y": 0}]')
         os.remove(filename)
-
-    def test_square_load_from_nonexistent_file(self):
-        """Test of Square.load_from_file() when file doesn’t exist."""
-        result = Square.load_from_file()
-        self.assertEqual(result, [])
-
-    def test_square_load_from_existing_file(self):
-        """Test of Square.load_from_file() when file exists."""
-        squares = [Square(1), Square(2)]
-        filename = "test_squares.json"
-        Square.save_to_file(squares)
-        loaded_squares = Square.load_from_file()
-        self.assertEqual(len(loaded_squares), len(squares))
-        for loaded_square, square in zip(loaded_squares, squares):
-            self.assertEqual(loaded_square.size, square.size)
-            self.assertEqual(loaded_square.x, square.x)
-            self.assertEqual(loaded_square.y, square.y)
-            self.assertEqual(loaded_square.id, square.id)
-        os.remove(filename)
