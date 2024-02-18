@@ -131,3 +131,8 @@ class TestSquare(unittest.TestCase):
         square_dict = {'id': 89, 'size': 5, 'x': 2, 'y': 3}
         square = Square.create(**square_dict)
         self.assertEqual(square.to_dictionary(), square_dict)
+
+    def test_square_save_to_file_none(self):
+        """Test of Square.save_to_file(None) in Square"""
+        with self.assertRaises(TypeError):
+            Square.save_to_file(None)
