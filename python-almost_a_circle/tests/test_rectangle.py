@@ -15,7 +15,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(result.total_errors, 0,
                          "Found code style errors (and warnings).")
 
-    def rectangle_1_2(self):
+    def test_rectangle_1_2(self):
         """Test of Rectangle(1, 2)"""
         rectangle = Rectangle(1, 2)
         self.assertEqual(rectangle.width, 1)
@@ -52,7 +52,7 @@ class TestRectangle(unittest.TestCase):
     def test_rectangle_width_string(self):
         """Rectangle(1, "2")"""
         with self.assertRaises(TypeError):
-            Rectangle(1,"2")
+            Rectangle(1, "2")
 
     def test_rectangle_y_str(self):
         """Test of Rectangle(1, 2, 3, "4")"""
