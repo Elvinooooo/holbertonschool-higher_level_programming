@@ -133,6 +133,51 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(square.to_dictionary(), square_dict)
 
     def test_square_save_to_file_none(self):
-        """Test of Square.save_to_file(None) in Square"""
-        with self.assertRaises(TypeError):
-            Square.save_to_file(None)
+        """Test of Square.save_to_file(None) in Square."""
+        Square.save_to_file(None)
+        filename = "Square.json"
+        self.assertTrue(os.path.exists(filename))
+        with open(filename, "r") as file:
+            content = file.read()
+            self.assertEqual(content, "[]")
+        os.remove(filename)
+
+    def test_square_save_to_file_empty_list(self):
+        """Test of Square.save_to_file([]) in Square."""
+        Square.save_to_file([])
+        filename = "Square.json"
+        self.assertTrue(os.path.exists(filename))
+        with open(filename, "r") as file:
+            content = file.read()
+            self.assertEqual(content, "[]")
+        os.remove(filename)
+
+    def test_square_save_to_file_with_square(self):
+        """Test of Square.save_to_file([Square(1)]) in Square."""
+        square = Square(1)
+        Square.save_to_file([square])
+        filename = "Square.json"
+        self.assertTrue(os.path.exists(filename))
+        with open(filename, "r") as file:
+            content = file.read()
+            self.assertEqual(content, '[{"id": 1, "size": 1, "x": 0, "y": 0}]')
+        os.remove(filename)
+
+    def test_square_load_from_nonexistent_file(self):
+        """Test of Square.load_from_file() when file doesn’t exist."""
+        result = Square.load_from_file()
+        self.assertEqual(result, [])
+
+    def test_square_load_from_existing_file(self):
+        """Test of Square.load_from_file() when file exists."""
+        squares = [Square(1), Square(2)]
+        filename = "test_squares.json"
+        Square.save_to_file(squares)
+        loaded_squares = Square.load_from_file()
+        self.assertEqual(len(loaded_squares), len(squares))
+        for loaded_square, square in zip(loaded_squares, squares):
+            self.assertEqual(loaded_square.size, square.size)
+            self.assertEqual(loaded_square.x, square.x)
+            self.assertEqual(loaded_square.y, square.y)
+            self.assertEqual(loaded_square.id, square.id)
+        os.remove(filename)
