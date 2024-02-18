@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Defines unittests for models/rectangle"""
+# test_rectangle.py
+# Brennan D Baraban <375@holbertonschool.com>
+"""Defines unittests for models/rectangle.py."""
 import io
 import sys
 import unittest
